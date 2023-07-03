@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<grammar version="1.0" xml:lang="ru-RU" root="Main"
+xmlns="http://www.w3.org/2001/06/grammar" tag-format="semantics-ms/1.0">
+
+	<rule id = "Main" scope = "public">
+		<ruleref uri ="#компьютер"/><tag> $.object = $$</tag>
+		<one-of>
+			<item>
+				открой<ruleref uri ="#файлы"/><tag>$.start = $$</tag>
+			</item>
+			<item>
+				запусти<ruleref uri ="#файлы"/><tag>$.start = $$</tag>
+			</item>
+			<item>
+				закрой<ruleref uri ="#exe"/><tag>$.close = $$</tag>
+			</item>
+			<item>
+				протокол<ruleref uri ="#протоколы"/><tag>$.protocol = $$</tag>
+			</item>
+		</one-of>
+		
+		
+	</rule>
+	
+	
+	
+	
+	<rule id="компьютер" scope="private">
+		<one-of>
+			<item>
+				Дисморд<tag> $ = "Дисморд" </tag>
+			</item>
+			<item>
+				Морак<tag> $ = "Морак" </tag>
+			</item>
+			<item>
+				Компьютер<tag> $ = "Компьютер" </tag>
+			</item>
+		</one-of>
+	</rule>
+
+
+	<rule id="файлы" scope="private">
+		<one-of>
+			<item>
+				диспечер устройств <tag>$ = "devmgmt.msc" </tag>
+			</item>
+			<item>
+				калькулятор<tag>$ = "calc" </tag>
+			</item>
+			<item>
+				баллы <tag>$ = "C:\\Users\\nikit\\OneDrive\\Рабочий стол\\баллы.xlsx" </tag>
+			</item>
+			<item>
+				расценку баллов <tag>$ = "C:\\Users\\nikit\\OneDrive\\Рабочий стол\\расценка баллов.xlsx" </tag>
+			</item>
+		</one-of>
+	</rule>
+
+	
+	<rule id="exe" scope="private">
+		<one-of>
+			<item>
+				блакнот <tag>$ = "notepad" </tag>
+			</item>
+			<item>
+				доту <tag>$ = "dota2" </tag>
+			</item>
+		</one-of>
+	</rule>
+
+
+	<rule id="протоколы" scope="private">
+		<one-of>
+			<item>
+				блэкаут <tag>$ = "blackout" </tag>
+			</item>
+			<item>
+				 нервный дотер<tag>$ = "dota2" </tag>
+			</item>
+		</one-of>
+	</rule>
+
+</grammar>
